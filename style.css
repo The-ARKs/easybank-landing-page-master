@@ -1,18 +1,25 @@
-
-
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+@font-face {
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; src: url(Open_Sans/OpenSans-Italic-VariableFont_wdth\,wght.ttf),
+    /* url(Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf),
+    url(Public_Sans/PublicSans-Italic-VariableFont_wght.ttf),
+    url(Public_Sans/PublicSans-VariableFont_wght.ttf), */
+    
+    /* url(Open_Sans\,Public_Sans\,Raleway.zip); */
+    
+}
+
 .container {
     width: 80%;
     margin: 0 auto;
-    justify-content: space-between;
     align-items: center;
         display: flex;
-
+padding-left: 40px;
+padding-right: 40px;
 }
 .featurescontainer{
      width: 80%;
@@ -47,6 +54,7 @@
     position: relative;
     padding-bottom: 5px;
     transition: all 0.3s ease-in-out;
+    opacity: 0.2;
 }
 
 .nav ul li a::after {
@@ -65,7 +73,7 @@
 }
 
 .btn {
-    background: hsl(136, 65%, 51%);
+    background:linear-gradient(to right,hsl(136, 65%, 51%),hsl(192, 70%, 51%)); 
     color: white;
     padding: 10px 20px;
     border: none;
@@ -80,7 +88,6 @@
 /* تنسيق القسم الرئيسي */
 .hero {
     background: hsl(0, 0%, 98%);
-    padding: 100px 0;
 }
 
 /* تنسيق الحاوية */
@@ -88,13 +95,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0 ;
+    overflow: hidden;
+/* position: relative; */
+
 }
 
 /* تنسيق النص */
 .hero-text {
-    max-width: 50%;
+    /* max-width: 50%; */
+    padding-left: 80px;
 }
 
 .hero-text h1 {
@@ -111,7 +122,7 @@
 
 /* تنسيق زر "Request Invite" */
 .hero-text .btn {
-    background: hsl(136, 65%, 51%);
+    background:linear-gradient(to right,hsl(136, 65%, 51%),hsl(192, 70%, 51%)); 
     color: white;
     border: none;
     padding: 12px 30px;
@@ -134,19 +145,20 @@
 }
 
 .hero-image .bg-shape {
+    
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: -108px;
+    right: -146px;
+    width: 167vh;
     z-index: 1;
+    height: auto;
 }
-
 .hero-image .phones {
     position: absolute;
-    top: 20px;
-    left: 50%;
+    top: -64px;
+    left: 62%;
     transform: translateX(-50%);
-    width: 80%;
+    width: 116vh;
     z-index: 2;
 }
 
@@ -154,9 +166,11 @@
 /* تنسيق القسم بالكامل */
 .features {
     background: hsl(220, 16%, 96%);
-    padding: 80px 0;
     text-align: center;
     display: block;
+    margin: -102px 0px;
+    width: 100%;
+    height: 600px;
 }
 
 /* تنسيق العنوان والوصف */
@@ -164,13 +178,17 @@
     font-size: 32px;
     color: hsl(233, 26%, 24%);
     margin-bottom: 10px;
+    margin: 23px 0px;
+    text-align: start;
+    padding-top: 50px;
 }
 
 .features .description {
     font-size: 16px;
     color: hsl(233, 8%, 62%);
     max-width: 600px;
-    margin: 0 auto 40px;
+    margin: 50px 0px;
+    text-align: start;
 }
 
 /* تنسيق الشبكة */
@@ -184,36 +202,36 @@
 /* تنسيق كل ميزة */
 .feature {
     max-width: 250px;
-    text-align: center;
-}
+    text-align: start;}
 
 /* تنسيق الأيقونات */
 .icon-container {
     width: 60px;
     height: 60px;
-    background-color: hsl(136, 65%, 51%);
     border-radius: 50%;
     display: flex;
+    background:linear-gradient(to right,hsl(136, 65%, 51%),hsl(192, 70%, 51%)); 
+    margin-bottom: 20px;
     justify-content: center;
     align-items: center;
-    margin: 0 auto 15px;
 }
 
 .icon-container img {
-    width: 30px;
+    width: 40px;
 }
 
 /* تنسيق العناوين */
 .feature h3 {
     font-size: 18px;
     color: hsl(233, 26%, 24%);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 /* تنسيق النصوص */
 .feature p {
     font-size: 14px;
     color: hsl(233, 8%, 62%);
+    padding-right: 20px;
 }
 
 /* تنسيق القسم بالكامل */
@@ -223,7 +241,6 @@
 }
 
 .articles h2 {
-    text-align: center;
     font-size: 32px;
     color: hsl(233, 26%, 24%);
     margin-bottom: 40px;
@@ -243,7 +260,7 @@
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* تنسيق الصور */
@@ -317,7 +334,7 @@
 /* روابط الفوتر */
 .footer-links {
     display: flex;
-    gap: 50px;
+    gap: 150px;
 }
 
 .footer-links ul {
@@ -345,7 +362,7 @@
 }
 
 .footer-cta .btn {
-    background: hsl(136, 65%, 51%);
+    background:linear-gradient(to right,hsl(136, 65%, 51%),hsl(192, 70%, 51%)); 
     border: none;
     padding: 10px 20px;
     color: #fff;
@@ -364,726 +381,35 @@
     color: hsl(220, 14%, 75%);
 }
 
-
-/* إعادة تعيين القيم الافتراضية */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-/* تصميم الحاوية */
-.container {
-    width: 80%;
-    margin: 0 auto;
-    justify-content: space-between;
-    align-items: center;
-        display: flex;
-
-}
-.featurescontainer{
-     width: 80%;
-    margin: 0 auto;
-    justify-content: space-between;
-    align-items: center;
-}
-/* تنسيق الهيدر */
-.header {
-    background: white;
-    padding: 20px 0;   
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-
-
-/* تصميم اللوجو */
-.logo img {
-    height: 30px;
-}
-
-/* تنسيق الروابط في النافبار */
-.nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
-.nav ul li a {
-    text-decoration: none;
-    color: hsl(233, 8%, 62%);
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav ul li a:hover {
-    color: hsl(233, 26%, 24%);
-}
-
-/* زر Request Invite */
-.btn {
-    background:linear-gradient(to right,hsl(136, 65%, 51%),hsl(192, 70%, 51%)) ;    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: opacity 0.3s;
-}
-
-.btn:hover {
-    opacity: 0.8;
-}
-
-
-/* تنسيق القسم الرئيسي */
-.hero {
-    background: hsl(0, 0%, 98%);
-    padding: 100px 0;
-}
-
-/* تنسيق الحاوية */
-.hero .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    margin: 0 auto;
-}
-
-/* تنسيق النص */
-.hero-text {
-    max-width: 50%;
-}
-
-.hero-text h1 {
-    font-size: 40px;
-    color: hsl(233, 26%, 24%);
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    font-size: 16px;
-    color: hsl(233, 8%, 62%);
-    margin-bottom: 20px;
-}
-
-/* تنسيق زر "Request Invite" */
-.hero-text .btn {
-    background: hsl(136, 65%, 51%);
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: opacity 0.3s;
-}
-
-.hero-text .btn:hover {
-    opacity: 0.8;
-}
-
-/* تنسيق الصور المتراكبة */
-.hero-image {
-    position: relative;
-    width: 500px;
-    height: 500px;
-}
-
-.hero-image .bg-shape {
+@media (max-width: 768px) {
+   *{
+     display:blank;
+        width: 100%;
+   }
+   
+   .hero-image .phones{
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-}
-
-.hero-image .phones {
-    position: absolute;
-    top: 20px;
-    left: 50%;
+    top: -313px;
+    left: -216%;
     transform: translateX(-50%);
-    width: 80%;
+    width: 42vh;
     z-index: 2;
-}
-
-
-/* تنسيق القسم بالكامل */
-.features {
-    background: hsl(220, 16%, 96%);
-    padding: 80px 0;
-    text-align: center;
-    display: block;
-}
-
-/* تنسيق العنوان والوصف */
-.features h2 {
-    font-size: 32px;
-    color: hsl(233, 26%, 24%);
-    margin-bottom: 10px;
-}
-
-.features .description {
-    font-size: 16px;
-    color: hsl(233, 8%, 62%);
-    max-width: 600px;
-    margin: 0 auto 40px;
-}
-
-/* تنسيق الشبكة */
-.features-grid {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* تنسيق كل ميزة */
-.feature {
-    max-width: 250px;
-    text-align: center;
-}
-
-/* تنسيق الأيقونات */
-.icon-container {
-    width: 60px;
-    height: 60px;
-    background-color: hsl(136, 65%, 51%);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 15px;
-}
-
-.icon-container img {
-    width: 30px;
-}
-
-/* تنسيق العناوين */
-.feature h3 {
-    font-size: 18px;
-    color: hsl(233, 26%, 24%);
-    margin-bottom: 10px;
-}
-
-/* تنسيق النصوص */
-.feature p {
-    font-size: 14px;
-    color: hsl(233, 8%, 62%);
-}
-
-/* تنسيق القسم بالكامل */
-.articles {
-    padding: 80px 0;
-    background: #fff;
-}
-
-.articles h2 {
-    text-align: center;
-    font-size: 32px;
-    color: hsl(233, 26%, 24%);
-    margin-bottom: 40px;
-}
-
-/* الشبكة الخاصة بالمقالات */
-.articles-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* تنسيق كل مقال */
-.article {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* تنسيق الصور */
-.article img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-/* تنسيق محتوى المقال */
-.article-content {
-    padding: 20px;
-}
-
-.article .author {
-    font-size: 12px;
-    color: hsl(233, 8%, 62%);
-    margin-bottom: 10px;
-}
-
-.article h3 {
-    font-size: 18px;
-    color: hsl(233, 26%, 24%);
-    margin-bottom: 10px;
-}
-
-.article .excerpt {
-    font-size: 14px;
-    color: hsl(233, 8%, 62%);
-}
-
-
-
-
-/* تنسيق الفوتر بالكامل */
-.footer {
-    background: hsl(233, 26%, 24%);
-    padding: 40px 0;
-    color: #fff;
-}
-
-/* محاذاة المحتوى الداخلي */
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* تنسيق الشعار */
-.footer-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-logo img {
-    width: 120px;
-    margin-bottom: 15px;
-}
-
-/* أيقونات السوشيال ميديا */
-.social-icons img {
-    width: 25px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-/* روابط الفوتر */
-.footer-links {
-    display: flex;
-    gap: 50px;
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links ul li {
-    margin-bottom: 10px;
-}
-
-.footer-links ul li a {
-    text-decoration: none;
-    color: hsl(220, 14%, 75%);
-    font-size: 14px;
-}
-
-.footer-links ul li a:hover {
-    color: #fff;
-}
-
-/* زر الدعوة */
-.footer-cta {
-    text-align: center;
-}
-
-.footer-cta .btn {
-    background: hsl(136, 65%, 51%);
-    border: none;
-    padding: 10px 20px;
-    color: #fff;
-    font-size: 14px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.footer-cta .btn:hover {
-    background: hsl(136, 73%, 40%);
-}
-
-.footer-cta p {
-    font-size: 12px;
-    margin-top: 10px;
-    color: hsl(220, 14%, 75%);
-}
-
-
-/* إعادة تعيين القيم الافتراضية */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-/* تصميم الحاوية */
-.container {
-    width: 80%;
-    margin: 0 auto;
-    justify-content: space-between;
-    align-items: center;
-        display: flex;
-
-}
-.featurescontainer{
-     width: 80%;
-    margin: 0 auto;
-    justify-content: space-between;
-    align-items: center;
-}
-/* تنسيق الهيدر */
-.header {
-    background: white;
-    padding: 20px 0;   
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
-
-
-/* تصميم اللوجو */
-.logo img {
-    height: 30px;
-}
-
-/* تنسيق الروابط في النافبار */
-.nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
-.nav ul li a {
-    text-decoration: none;
-    color: hsl(233, 8%, 62%);
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav ul li a:hover {
-    color: hsl(233, 26%, 24%);
-}
-
-/* زر Request Invite */
-.btn {
-    background:linear-gradient(to right,hsl(136, 65%, 51%),hsl(192, 70%, 51%)) ;    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: opacity 0.3s;
-}
-
-.btn:hover {
-    opacity: 0.8;
-}
-
-
-/* تنسيق القسم الرئيسي */
-.hero {
-    background: hsl(0, 0%, 98%);
-    padding: 100px 0;
-}
-
-/* تنسيق الحاوية */
-.hero .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    margin: 0 auto;
-}
-
-/* تنسيق النص */
-.hero-text {
-    max-width: 50%;
-}
-
-.hero-text h1 {
-    font-size: 40px;
-    color: hsl(233, 26%, 24%);
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    font-size: 16px;
-    color: hsl(233, 8%, 62%);
-    margin-bottom: 20px;
-}
-
-/* تنسيق زر "Request Invite" */
-.hero-text .btn {
-    background: hsl(136, 65%, 51%);
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: opacity 0.3s;
-}
-
-.hero-text .btn:hover {
-    opacity: 0.8;
-}
-
-/* تنسيق الصور المتراكبة */
-.hero-image {
-    position: relative;
-    width: 500px;
-    height: 500px;
-}
-
-.hero-image .bg-shape {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1;
-}
-
-.hero-image .phones {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    z-index: 2;
-}
-
-
-/* تنسيق القسم بالكامل */
-.features {
-    background: hsl(220, 16%, 96%);
-    padding: 80px 0;
-    text-align: center;
-    display: block;
-}
-
-/* تنسيق العنوان والوصف */
-.features h2 {
-    font-size: 32px;
-    color: hsl(233, 26%, 24%);
-    margin-bottom: 10px;
-}
-
-.features .description {
-    font-size: 16px;
-    color: hsl(233, 8%, 62%);
-    max-width: 600px;
-    margin: 0 auto 40px;
-}
-
-/* تنسيق الشبكة */
-.features-grid {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* تنسيق كل ميزة */
-.feature {
-    max-width: 250px;
-    text-align: center;
-}
-
-/* تنسيق الأيقونات */
-.icon-container {
-    width: 60px;
-    height: 60px;
-    background-color: hsl(136, 65%, 51%);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 15px;
-}
-
-.icon-container img {
-    width: 30px;
-}
-
-/* تنسيق العناوين */
-.feature h3 {
-    font-size: 18px;
-    color: hsl(233, 26%, 24%);
-    margin-bottom: 10px;
-}
-
-/* تنسيق النصوص */
-.feature p {
-    font-size: 14px;
-    color: hsl(233, 8%, 62%);
-}
-
-/* تنسيق القسم بالكامل */
-.articles {
-    padding: 80px 0;
-    background: #fff;
-}
-
-.articles h2 {
-    text-align: center;
-    font-size: 32px;
-    color: hsl(233, 26%, 24%);
-    margin-bottom: 40px;
-}
-
-/* الشبكة الخاصة بالمقالات */
-.articles-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* تنسيق كل مقال */
-.article {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-/* تنسيق الصور */
-.article img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-/* تنسيق محتوى المقال */
-.article-content {
-    padding: 20px;
-}
-
-.article .author {
-    font-size: 12px;
-    color: hsl(233, 8%, 62%);
-    margin-bottom: 10px;
-}
-
-.article h3 {
-    font-size: 18px;
-    color: hsl(233, 26%, 24%);
-    margin-bottom: 10px;
-}
-
-.article .excerpt {
-    font-size: 14px;
-    color: hsl(233, 8%, 62%);
-}
-
-
-
-
-/* تنسيق الفوتر بالكامل */
-.footer {
-    background: hsl(233, 26%, 24%);
-    padding: 40px 0;
-    color: #fff;
-}
-
-/* محاذاة المحتوى الداخلي */
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* تنسيق الشعار */
-.footer-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-logo img {
-    width: 120px;
-    margin-bottom: 15px;
-}
-
-/* أيقونات السوشيال ميديا */
-.social-icons img {
-    width: 25px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-/* روابط الفوتر */
-.footer-links {
-    display: flex;
-    gap: 50px;
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links ul li {
-    margin-bottom: 10px;
-}
-
-.footer-links ul li a {
-    text-decoration: none;
-    color: hsl(220, 14%, 75%);
-    font-size: 14px;
-}
-
-.footer-links ul li a:hover {
-    color: #fff;
-}
-
-/* زر الدعوة */
-.footer-cta {
-    text-align: center;
-}
-
-.footer-cta .btn {
-    background: hsl(136, 65%, 51%);
-    border: none;
-    padding: 10px 20px;
-    color: #fff;
-    font-size: 14px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.footer-cta .btn:hover {
-    background: hsl(136, 73%, 40%);
-}
-
-.footer-cta p {
-    font-size: 12px;
-    margin-top: 10px;
-    color: hsl(220, 14%, 75%);
+    }
+    .hero-image .bg-shape {
+        position: absolute;
+        top: -500px;
+        right: -380px;
+        width: 100vh;
+        z-index: 1;
+        height: auto;
+        }
+        .hero-text{
+            padding-left: 80px;
+        padding-top: 473px;
+        text-align: start;
+        margin-bottom: 200px;
+        }
+        .hero{
+            display: block;
+        }
 }
