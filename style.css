@@ -371,7 +371,7 @@ padding-right: 40px;
 
 .footer-cta p {
     font-size: 12px;
-    margin-top: 10px;
+    margin-top: 20px;
     color: hsl(220, 14%, 75%);
 }
 
@@ -379,6 +379,11 @@ padding-right: 40px;
   .nav{
     display: none;
   }
+  .hero-image {
+    position: relative;
+        width: 500px;
+        height: 381px;
+ }
   header .container .btn{
     display: none;
   }
@@ -391,37 +396,26 @@ padding-right: 40px;
    }
    .hero-image .phones{
     position: absolute;
-    position: absolute;
-    top: -21%;
-    left: -80%;
-    transform: translateX(-50%);
-    width: 187%;
-    z-index: 2;
+        top: -35%;
+        left: 55%;
+        /* transform: translateX(-50%); */
+        width: 73%;
+        z-index: 2;
     }
     .hero-image .bg-shape {
-        position: absolute;
-        /* top: -100%; */
-        right: 63%;
-        width: 401px;
+    position: absolute;
+        top: -86%;
+        right: -29%;
+        width: 146%;
         z-index: 1;
         height: auto;
         }
         .hero-text{
           
         padding-left: 52px;
-        padding-top: 58%;
         text-align: center;
         }
-        /* .hero-image{
-            margin-top: 53%;
-            position: relative;
-            height: 334px;
-            margin-right: 1%;
-        } */
-        /* .hero-container{
-            display: block;
-            width: 100%;
-        } */
+      
         .features-grid{
         display: block;
         margin-left: 11%;
@@ -436,7 +430,7 @@ padding-right: 40px;
         margin: -41% 0px;
         width: 100%;
         height: 0%;
-        padding-bottom: 35%;
+        padding-bottom: 45%;
             }
         .articles-grid {
         display: block;
@@ -445,9 +439,7 @@ padding-right: 40px;
         max-width: 1100px;
         margin: auto;
         }
-        .articles {
-        padding: 5px 0px;
-        }
+       
          .hero-text h1 {
          text-align: center;
         }
@@ -474,14 +466,15 @@ padding-right: 40px;
           margin-bottom: 13%;
             }
                 .hero .container {
-            /* display: flex; */
-           align-items: center;
-             justify-content: space-between;
-            width: 157%;
-             margin-left: -64px;
-             overflow: hidden;
-             position: relative;
-             padding-bottom: 95px;
+             display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-between;
+        width: 110%;
+        margin-left: -43px;
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 136px;
                }
            .features h2 {
              font-size: 26px;
@@ -491,7 +484,7 @@ padding-right: 40px;
             padding-top: 50px;
              }
              .header{
-width: 0px;
+            width: 0px;
 padding: 0px;
 
              }
