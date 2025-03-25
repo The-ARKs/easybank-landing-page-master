@@ -1,472 +1,540 @@
+body{
+    overflow-x: hidden;
+}
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      transition: all .5s linear;
+      font-family: sans-serif;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      align-items: center;
+      display: flex;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    .featurescontainer {
+      width: 80%;
+      margin: 0 auto;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      background: white;
+      padding: 20px 0;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      margin: auto;
+    }
+
+    .closeMenu {
+      display: none;
+    }
+
+    .openMenu {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      gap: 5px;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .openMenu div {
+      width: 100%;
+      height: 5px;
+      background-color: black;
+    }
+
+    nav {
+      display: flex;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: hsl(233, 8%, 62%);
+      font-weight: 500;
+      position: relative;
+      padding-bottom: 5px;
+      transition: all 0.3s ease-in-out;
+        }
+    nav ul li a:hover {
+        color:hsl(233, 26%, 24%) ;
+    }
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: hsl(136, 65%, 51%);
+      transition: width 0.3s ease-in-out;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    .btn {
+      background: linear-gradient(to right,
+          hsl(136, 65%, 51%),
+          hsl(192, 70%, 51%));
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+    }
+
+    /* تنسيق القسم الرئيسي */
+    .hero {
+      background: hsl(0, 0%, 98%);
+    }
+
+    /* تنسيق الحاوية */
+    .hero .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    /* تنسيق النص */
+    .hero-text {
+      padding-left: 80px;
+    }
+
+    .hero-text h1 {
+      font-size: 40px;
+      color: hsl(233, 26%, 24%);
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      font-size: 16px;
+      color: hsl(233, 8%, 62%);
+      margin-bottom: 20px;
+    }
+
+    /* تنسيق زر "Request Invite" */
+    .hero-text .btn {
+      background: linear-gradient(to right,
+          hsl(136, 65%, 51%),
+          hsl(192, 70%, 51%));
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .hero-text .btn:hover {
+      opacity: 0.8;
+    }
+
+    /* تنسيق الصور المتراكبة */
+    .hero-image {
+      position: relative;
+      width: 500px;
+      height: 500px;
+    }
+
+    .hero-image .bg-shape {
+      position: absolute;
+      top: -27%;
+      right: -38%;
+      width: 167%;
+      z-index: 1;
+      height: auto;
+    }
+
+    .hero-image .phones {
+      position: absolute;
+      top: -17%;
+      left: 62%;
+      transform: translateX(-50%);
+      width: 116%;
+      z-index: 2;
+    }
+
+    /* تنسيق القسم بالكامل */
+    .features {
+      background: hsl(220, 16%, 96%);
+      text-align: center;
+      display: block;
+      margin: -102px 0px;
+      width: 100%;
+      height: 600px;
+    }
+
+    /* تنسيق العنوان والوصف */
+    .features h2 {
+      font-size: 32px;
+      color: hsl(233, 26%, 24%);
+      margin-bottom: 10px;
+      margin: 23px 0px;
+      text-align: start;
+      padding-top: 50px;
+    }
+
+    .features .description {
+      font-size: 16px;
+      color: hsl(233, 8%, 62%);
+      max-width: 600px;
+      margin: 50px 0px;
+      text-align: start;
+    }
+
+    /* تنسيق الشبكة */
+    .features-grid {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* تنسيق كل ميزة */
+    .feature {
+      max-width: 250px;
+      text-align: start;
+    }
+
+    /* تنسيق الأيقونات */
+    .icon-container {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      background: linear-gradient(to right,
+          hsl(136, 65%, 51%),
+          hsl(192, 70%, 51%));
+      margin-bottom: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon-container img {
+      width: 40px;
+    }
+
+    /* تنسيق العناوين */
+    .feature h3 {
+      font-size: 18px;
+      color: hsl(233, 26%, 24%);
+      margin-bottom: 20px;
+    }
+
+    /* تنسيق النصوص */
+    .feature p {
+      font-size: 14px;
+      color: hsl(233, 8%, 62%);
+      padding-right: 20px;
+    }
+
+    /* تنسيق القسم بالكامل */
+    .articles {
+      padding: 80px 0;
+      background: #fff;
+    }
+
+    .articles h2 {
+      font-size: 32px;
+      color: hsl(233, 26%, 24%);
+      margin-bottom: 40px;
+    }
+
+    /* الشبكة الخاصة بالمقالات */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* تنسيق كل مقال */
+    .article {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    /* تنسيق الصور */
+    .article img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    /* تنسيق محتوى المقال */
+    .article-content {
+      padding: 20px;
+    }
+
+    .article .author {
+      font-size: 12px;
+      color: hsl(233, 8%, 62%);
+      margin-bottom: 10px;
+    }
+
+    .article h3 {
+      font-size: 18px;
+      color: hsl(233, 26%, 24%);
+      margin-bottom: 10px;
+    }
+
+    .article .excerpt {
+      font-size: 14px;
+      color: hsl(233, 8%, 62%);
+    }
+
+    /* تنسيق الفوتر بالكامل */
+    .footer {
+      background: hsl(233, 26%, 24%);
+      padding: 40px 0;
+      color: #fff;
+    }
+
+    /* محاذاة المحتوى الداخلي */
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* تنسيق الشعار */
+    .footer-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .footer-logo img {
+      width: 120px;
+      margin-bottom: 15px;
+    }
+
+    /* أيقونات السوشيال ميديا */
+    .social-icons img {
+      width: 25px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    /* روابط الفوتر */
+    .footer-links {
+      display: flex;
+      gap: 150px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links ul li a {
+      text-decoration: none;
+      color: hsl(220, 14%, 75%);
+      font-size: 14px;
+    }
+
+    .footer-links ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-cta {
+      text-align: center;
+    }
+
+    .footer-cta .btn {
+      background: linear-gradient(to right,
+          hsl(136, 65%, 51%),
+          hsl(192, 70%, 51%));
+      border: none;
+      padding: 10px 20px;
+      color: #fff;
+      font-size: 14px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .footer-cta .btn:hover {
+      background: hsl(136, 73%, 40%);
+    }
+
+    .footer-cta p {
+      font-size: 12px;
+      margin-top: 20px;
+      color: hsl(220, 14%, 75%);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        width: 70%;
+        height: 50vh;
+        top: 127%;
+        left: 15%;
+        background-color: #fff;
+        z-index: 999;
+        box-shadow:0 0 1px 0 #d0d0d0;
+        display: none;
+      }
+nav ul li a {
+            color: hsl(233, 26%, 24%);
 }
-@font-face {
-   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; src: url(Open_Sans/OpenSans-Italic-VariableFont_wdth\,wght.ttf),
-   
-    
-}
+      nav ul {
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+      }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    align-items: center;
-        display: flex;
-padding-left: 40px;
-padding-right: 40px;
-}
-.featurescontainer{
-     width: 80%;
-    margin: 0 auto;
-    justify-content: space-between;
-    align-items: center;
-}
-.header {
-    background: white;
-    padding: 20px 0;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: auto;
-}
-
-.nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav ul li a {
-    text-decoration: none;
-    color: hsl(233, 26%, 24%);
-    font-weight: 500;
-    position: relative;
-    padding-bottom: 5px;
-    transition: all 0.3s ease-in-out;
-    opacity: 0.2;
-}
-
-.nav ul li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background: hsl(136, 65%, 51%);
-    transition: width 0.3s ease-in-out;
-}
-
-.nav ul li a:hover::after {
-    width: 100%;
-}
-
-.btn {
-    background:linear-gradient(to right,hsl(136, 65%, 51%),hsl(192, 70%, 51%)); 
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease-in-out;
-}
-
-
-
-/* تنسيق القسم الرئيسي */
-.hero {
-    background: hsl(0, 0%, 98%);
-}
-
-/* تنسيق الحاوية */
-.hero .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0 ;
-    overflow: hidden;
-
-}
-
-/* تنسيق النص */
-.hero-text {
-    padding-left: 80px;
-}
-
-.hero-text h1 {
-    font-size: 40px;
-    color: hsl(233, 26%, 24%);
-    margin-bottom: 20px;
-}
-
-.hero-text p {
-    font-size: 16px;
-    color: hsl(233, 8%, 62%);
-    margin-bottom: 20px;
-}
-
-/* تنسيق زر "Request Invite" */
-.hero-text .btn {
-    background:linear-gradient(to right,hsl(136, 65%, 51%),hsl(192, 70%, 51%)); 
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: opacity 0.3s;
-}
-
-.hero-text .btn:hover {
-    opacity: 0.8;
-}
-
-/* تنسيق الصور المتراكبة */
-.hero-image {
-    position: relative;
-    width: 500px;
-    height: 500px;
-}
-
-.hero-image .bg-shape {
-    
-    position: absolute;
-    top: -27%;
-    right: -38%;
-    width: 167%;
-    z-index: 1;
-    height: auto;
-}
-.hero-image .phones {
-    position: absolute;
-    top: -17%;
-    left: 62%;
-    transform: translateX(-50%);
-    width: 116%;
-    z-index: 2;
-}
-
-
-/* تنسيق القسم بالكامل */
-.features {
-    background: hsl(220, 16%, 96%);
-    text-align: center;
-    display: block;
-    margin: -102px 0px;
-    width: 100%;
-    height: 600px;
-}
-
-/* تنسيق العنوان والوصف */
-.features h2 {
-    font-size: 32px;
-    color: hsl(233, 26%, 24%);
-    margin-bottom: 10px;
-    margin: 23px 0px;
-    text-align: start;
-    padding-top: 50px;
-}
-
-.features .description {
-    font-size: 16px;
-    color: hsl(233, 8%, 62%);
-    max-width: 600px;
-    margin: 50px 0px;
-    text-align: start;
-}
-
-/* تنسيق الشبكة */
-.features-grid {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* تنسيق كل ميزة */
-.feature {
-    max-width: 250px;
-    text-align: start;}
-
-/* تنسيق الأيقونات */
-.icon-container {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    background:linear-gradient(to right,hsl(136, 65%, 51%),hsl(192, 70%, 51%)); 
-    margin-bottom: 20px;
-    justify-content: center;
-    align-items: center;
-}
-
-.icon-container img {
-    width: 40px;
-}
-
-/* تنسيق العناوين */
-.feature h3 {
-    font-size: 18px;
-    color: hsl(233, 26%, 24%);
-    margin-bottom: 20px;
-}
-
-/* تنسيق النصوص */
-.feature p {
-    font-size: 14px;
-    color: hsl(233, 8%, 62%);
-    padding-right: 20px;
-
-}
-
-/* تنسيق القسم بالكامل */
-.articles {
-    padding: 80px 0;
-    background: #fff;
-}
-
-.articles h2 {
-    font-size: 32px;
-    color: hsl(233, 26%, 24%);
-    margin-bottom: 40px;
-}
-
-/* الشبكة الخاصة بالمقالات */
-.articles-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* تنسيق كل مقال */
-.article {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* تنسيق الصور */
-.article img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-/* تنسيق محتوى المقال */
-.article-content {
-    padding: 20px;
-}
-
-.article .author {
-    font-size: 12px;
-    color: hsl(233, 8%, 62%);
-    margin-bottom: 10px;
-}
-
-.article h3 {
-    font-size: 18px;
-    color: hsl(233, 26%, 24%);
-    margin-bottom: 10px;
-}
-
-.article .excerpt {
-    font-size: 14px;
-    color: hsl(233, 8%, 62%);
-}
-
-
-
-
-/* تنسيق الفوتر بالكامل */
-.footer {
-    background: hsl(233, 26%, 24%);
-    padding: 40px 0;
-    color: #fff;
-}
-
-/* محاذاة المحتوى الداخلي */
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* تنسيق الشعار */
-.footer-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-logo img {
-    width: 120px;
-    margin-bottom: 15px;
-}
-
-/* أيقونات السوشيال ميديا */
-.social-icons img {
-    width: 25px;
-    margin-right: 10px;
-    cursor: pointer;
-}
-
-/* روابط الفوتر */
-.footer-links {
-    display: flex;
-    gap: 150px;
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links ul li {
-    margin-bottom: 10px;
-}
-
-.footer-links ul li a {
-    text-decoration: none;
-    color: hsl(220, 14%, 75%);
-    font-size: 14px;
-}
-
-.footer-links ul li a:hover {
-    color: #fff;
-}
-
-.footer-cta {
-    text-align: center;
-}
-
-.footer-cta .btn {
-    background:linear-gradient(to right,hsl(136, 65%, 51%),hsl(192, 70%, 51%)); 
-    border: none;
-    padding: 10px 20px;
-    color: #fff;
-    font-size: 14px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.footer-cta .btn:hover {
-    background: hsl(136, 73%, 40%);
-}
-
-.footer-cta p {
-    font-size: 12px;
-    margin-top: 20px;
-    color: hsl(220, 14%, 75%);
-}
-
-@media (max-width: 768px) {
-  .nav{
+      .openMenu {
+        display: block;
+        width: 40px;
+        height: 30px;
+    }
+.container .btn{
     display: none;
-  }
-  .hero-image {
-    position: relative;
+}
+      .hero-image {
+        position: relative;
         width: 500px;
         height: 381px;
- }
-  header .container .btn{
-    display: none;
-  }
-  .logo{
-    margin: 0px;
-  }
-   .hero{
-    margin-bottom: 80px;
+      }
 
-   }
-   .hero-image .phones{
-    position: absolute;
+      .logo {
+        margin: 0px;
+      }
+
+      .hero {
+        margin-bottom: 80px;
+      }
+
+      .hero-image .phones {
+        position: absolute;
         top: -35%;
         left: 55%;
         /* transform: translateX(-50%); */
         width: 73%;
         z-index: 2;
-    }
-    .hero-image .bg-shape {
-    position: absolute;
+      }
+
+      .hero-image .bg-shape {
+        position: absolute;
         top: -86%;
         right: -29%;
         width: 146%;
         z-index: 1;
         height: auto;
-        }
-        .hero-text{
-          
+      }
+
+      .hero-text {
         padding-left: 52px;
         text-align: center;
-        }
-      
-        .features-grid{
+      }
+
+      .features-grid {
         display: block;
         margin-left: 11%;
-        }
-        .featurescontainer {
-           align-content: center;
-            }
-            .features {
-                background: hsl(220, 16%, 96%);
+      }
+
+      .featurescontainer {
+        align-content: center;
+      }
+
+      .features {
+        background: hsl(220, 16%, 96%);
         text-align: center;
         display: block;
         margin: -41% 0px;
         width: 100%;
         height: 0%;
         padding-bottom: 45%;
-            }
-        .articles-grid {
+      }
+
+      .articles-grid {
         display: block;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
         max-width: 1100px;
         margin: auto;
-        }
-       
-         .hero-text h1 {
-         text-align: center;
-        }
-            .footer{
+      }
+
+      .hero-text h1 {
+        text-align: center;
+      }
+
+      .footer {
         display: block;
-         }
-             .footer-links {
-             display: block;
-                 }
-             .footer-top{
-             display: block;
-                 }
-         .footer-links ul {
-         text-align: center;
-           }
-       .feature {
-       text-align: center;
-           }
-       .icon-container {
-       margin-left: 50%;
-       margin-left: 36%;
-               }
-           .feature p{
-          margin-bottom: 13%;
-            }
-                .hero .container {
-             display: flex;
+      }
+
+      .footer-links {
+        display: block;
+      }
+
+      .footer-top {
+        display: block;
+      }
+
+      .footer-links ul {
+        text-align: center;
+      }
+
+      .feature {
+        text-align: center;
+      }
+
+      .icon-container {
+        margin-left: 50%;
+        margin-left: 36%;
+      }
+
+      .feature p {
+        margin-bottom: 13%;
+      }
+
+      .hero .container {
+        display: flex;
         flex-direction: column-reverse;
         align-items: center;
         justify-content: space-between;
@@ -475,18 +543,13 @@ padding-right: 40px;
         overflow: hidden;
         position: relative;
         padding-bottom: 136px;
-               }
-           .features h2 {
-             font-size: 26px;
-             color: hsl(233, 26%, 24%);
-            margin-bottom: 10px;
-                            text-align: center;
-            padding-top: 50px;
-             }
-             .header{
-            width: 0px;
-padding: 0px;
+      }
 
-             }
-           }
-
+      .features h2 {
+        font-size: 26px;
+        color: hsl(233, 26%, 24%);
+        margin-bottom: 10px;
+        text-align: center;
+        padding-top: 50px;
+      }
+    }
